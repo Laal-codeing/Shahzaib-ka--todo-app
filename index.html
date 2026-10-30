@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang=”en-GB” data-framework="javascript">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Shahzaib ka Todo app</title>
+  <link rel="shortcut icon"
+  href="lib/favicon.ico" type="image/x-icon">
+<style>
+  body {
+    background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    min-height: 100vh !important;
+  }
+  .todoapp {
+    background: transparent !important;
+    border-radius: 2px solid #000000 !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+  }
+  .new-todo,
+  .todo-list,
+  .footer {
+    background: transparent !important;
+  }
+  .todo-count,
+  .filters a,
+  .clear-completed,
+  .todo-list li label,
+  .new-todo {
+    color:#ffffff !important;
+    opacity: 1 !important;
+  }
+  h1 {
+    color:#ffffff !important;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6) !important;
+  }
+    .todo-list li,
+    .footer {
+      border-color: #000000 !important;
+  }
+  .footer::before {
+    display: none !important;
+  }
+</style>
+</head>
+<body>
+  <div id="app"></div>
+  <!-- CSS Styles are 100% optional. but they make it look *much* nicer -->
+  <link rel="stylesheet" href="lib/todomvc-common-base.css">
+  <link rel="stylesheet" href="lib/todomvc-app.css">
+  <script src="lib/elmish.js"></script>
+  <script src="lib/todo-app.js"></script>
+  <script>
+    var model = {
+      todos: [
+        // { id: 0, title: "Make something people want.", done: false },
+        // { id: 1, title: "Bootstrap for as long as you can", done: false },
+        // { id: 2, title: "Let's solve our own problem", done: false }
+      ],
+      hash: '#/', // the "route" to display
+      // editing: 2 // edit the 3rd todo list item (which has id == 2)
+    };
+    mount(model, update, view, 'app', subscriptions);
+  </script>
+
+  <!-- Below this point is all related to the Tests for the App -->
+  <div id="test-app"></div> <!-- Create a test-app div to mount the app -->
+</body>
+</html>
